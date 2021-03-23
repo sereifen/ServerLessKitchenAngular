@@ -1,0 +1,23 @@
+<h3>Cart</h3>
+<table>
+  <tr class="cart-item">
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Delete?</th>
+  </tr>
+  <tr class="cart-item" *ngFor="let item of items | keyvalue:mySortingFunction">
+    <td>{{item.key}}</td>
+    <td>{{item.value}}</td>
+    <td>
+      <div class="example-button-container">
+        <a class="button fancy-button" (click)="DeleteFromCart(item.key)">
+          <i class="material-icons">delete</i>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<button (click)="completeCart()" class="btn btn-primary pull-right">
+  Finish Purchase
+</button>

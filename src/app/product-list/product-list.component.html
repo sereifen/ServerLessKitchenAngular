@@ -1,0 +1,59 @@
+<h2>Ingredients</h2>
+<table style="width:100%">
+  <tr *ngFor="let ingrediente of ingredientes">
+    <th>
+      <h3>
+        {{ ingrediente.name }}
+      </h3>
+    </th>
+    <th>
+      <input type="number" step="1" #quanInput min="1" id="value" >
+    </th>
+    <th>
+      <button
+        (click)="addToCart(ingrediente,quanInput.value)"
+        class="btn btn-primary pull-right">
+        Buy
+      </button>
+    </th>
+  </tr>
+</table>
+
+<h2>Actual Ingredients</h2>
+
+<table style="width:100%">
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col}}
+    </th>
+  </tr>
+  <tr *ngFor="let ing of ingredientsList">
+    <td *ngFor="let col of columns">
+      {{ing[col]}}
+    </td>
+  </tr>
+</table>
+
+<!-- 
+  
+
+  <app-product-alerts [product]="product"> </app-product-alerts>
+
+    <th>
+      <input
+        type="number"
+        ng-model="theValue"
+        name="theValue"
+        step="1"
+        min="1"
+        max="10"
+        [defaultValue]="1"
+        ng-pattern="integerval"
+        required
+      />
+    </th>
+
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

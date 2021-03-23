@@ -1,0 +1,35 @@
+<h3> Recipes</h3>
+
+<button routerLink="/addnewrecipe" class="btn btn-primary pull-right">
+ Add new recipe
+</button>
+
+<h3> Actual Recipes:</h3>
+<table style="width:100%">
+  <tr>
+    <th *ngFor="let col of columns">
+      <span contenteditable="true">{{col}}</span>
+    </th>
+  </tr>
+  <tr *ngFor="let recipe of recipes">
+    <td *ngFor="let col of index">
+      <span contenteditable="true" (blur)="updateList(recipe['id'],col, $event)" >{{recipe[col]}}</span>      
+    </td>
+    <td>
+      <div class="example-button-container">
+        <a class="button fancy-button" (click)="CookRecipe(recipe['id'])">
+          <i class="material-icons">room_service</i>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div class="example-button-container">
+        <a class="button fancy-button" (click)="DeleteRecipe(recipe['id'])">
+          <i class="material-icons">delete</i>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+

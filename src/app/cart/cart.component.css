@@ -1,0 +1,11 @@
+th {
+  text-align: left;
+}
+td {
+  text-align: left;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+}
